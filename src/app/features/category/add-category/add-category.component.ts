@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { AddCategoryRequest } from '../models/add-category-request.models.';
+import { CategoryListComponent } from '../category-list/category-list.component';
 
 @Component({
   selector: 'app-add-category',
   standalone: true,
-  imports: [],
+  imports: [CategoryListComponent],
   templateUrl: './add-category.component.html',
   styleUrl: './add-category.component.css'
 })
