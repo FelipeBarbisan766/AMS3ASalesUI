@@ -1,16 +1,15 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Product } from '../models/product';
 import { Observable } from 'rxjs';
-import { Category } from '../models/category';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
-
+export class ProductService {
   constructor(private http: HttpClient) { }
-  getAllCategories() : Observable<Category[]>{
-    return this.http.get<Category[]>(
+  getAllProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(
       "https://localhost:7148/api/v1/Categories"
     );
   }
