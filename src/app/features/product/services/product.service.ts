@@ -10,7 +10,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
   getAllProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(
-      "https://localhost:7148/api/v1/Categories"
+      "https://localhost:7148/api/v1/Product"
     );
   }
 }

@@ -8,10 +8,10 @@ import { HttpClient , HttpClientModule } from '@angular/common/http';
 })
 export class CategoryService {
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
   getAllCategories() : Observable<Category[]>{
     return this.http.get<Category[]>(
       "https://localhost:7148/api/v1/Categories"
-    );
+    );  
   }
 }
