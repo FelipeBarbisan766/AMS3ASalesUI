@@ -4,14 +4,12 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">GUID</th>
           <th scope="col">Name</th>
           <th scope="col">Image</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let category of categories">
-          <td>{{category.id}}</td>
           <td>{{category.description}}</td>
           <td>{{category.imageURL}}</td>
         </tr>
