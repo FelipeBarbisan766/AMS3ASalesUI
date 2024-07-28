@@ -1,4 +1,8 @@
 export interface AddProductRequest
 {
-    description: string;
+    Description: string;
+    Price:string;
+    Stock:string;
+    ImageURL:string;
+    CategoryId:string;
 }

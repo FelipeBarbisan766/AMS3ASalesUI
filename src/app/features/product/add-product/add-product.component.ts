@@ -1,24 +1,36 @@
 import { Component } from '@angular/core';
 import { AddProductRequest } from '../models/add-product-request.models';
+import { ProductService } from '../services/product.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-product',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './add-product.component.html',
   styleUrl: './add-product.component.css'
 })
 export class AddProductComponent {
 
   model: AddProductRequest;
-  constructor(){
+  constructor(private productService:ProductService){
     this.model = {
 
-      description:''
+      Description:'',
+      Price:'',
+      Stock:'',
+      ImageURL:'',
+      CategoryId:''
+
     };
   }
   onFormSubmit(){
-    console.log(this.model);
+    this.productService.addProduct(this.model)
+    .subscribe({
+      next:(response)=>{
+        
+      }
+    });
   }
 
 }

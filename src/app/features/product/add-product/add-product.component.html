@@ -1,13 +1,16 @@
 <div class="container">
-    <h1>Cadastrar Category</h1>
+    <h1>Cadastrar Produto</h1>
     <form (ngSubmit)="onFormSubmit()">
         <div class="mt-2">
             <div class="mt-3">
                 <label class="form-label">Descrição</label>
+                <input type="text" class="form-control" name="description" id="description" [(ngModel)]="model.Description">
                 <label class="form-label">Price</label>
+                <input type="text" class="form-control" name="description" id="description" [(ngModel)]="model.Price">
                 <label class="form-label">Stock</label>
+                <input type="text" class="form-control" name="description" id="description" [(ngModel)]="model.Stock">
                 <label class="form-label">ImageURL</label>
-                <input type="text" class="form-control" name="description" id="description" ngModel="model.description">
+                <input type="text" class="form-control" name="description" id="description" [(ngModel)]="model.ImageURL">
             </div>
         </div>
         <div class="mt-3">  

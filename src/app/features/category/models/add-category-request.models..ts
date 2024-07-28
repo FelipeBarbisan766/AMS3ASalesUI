@@ -1,4 +1,5 @@
 export interface AddCategoryRequest
 {
-    description:string;
+    Description:string;
+    ImageURL:string;
 }
