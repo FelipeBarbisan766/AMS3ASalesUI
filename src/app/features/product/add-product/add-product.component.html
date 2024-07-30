@@ -6,13 +6,17 @@
                 <label class="form-label">Descrição</label>
                 <input type="text" class="form-control" name="description" id="description" [(ngModel)]="model.Description">
                 <label class="form-label">Price</label>
-                <input type="text" class="form-control" name="description" id="description" [(ngModel)]="model.Price">
+                <input type="text" class="form-control" name="price" id="description" [(ngModel)]="model.Price">
                 <label class="form-label">Stock</label>
-                <input type="text" class="form-control" name="description" id="description" [(ngModel)]="model.Stock">
+                <input type="text" class="form-control" name="stock" id="description" [(ngModel)]="model.Stock">
                 <label class="form-label">ImageURL</label>
-                <input type="text" class="form-control" name="description" id="description" [(ngModel)]="model.ImageURL">
+                <input type="text" class="form-control" name="imageURL" id="description" [(ngModel)]="model.ImageURL">
                 <label class="form-label">category</label>
-                <input type="text" class="form-control" name="description" id="description" [(ngModel)]="model.categoryId">
+                <ng-container *ngIf="categories">
+                    <select class="form-select" name="category" id="description" *ngFor="let category of categories" >
+                        <option value="{{category.id}}" [(ngModel)]="model.CategoryId">{{category.description}}</option>
+                    </select>
+                </ng-container>
             </div>
         </div>
         <div class="mt-3">  
@@ -22,8 +26,4 @@
     </form>
 </div>
 <div class="container">
-    <ng-container *ngIf="categories">
-
-          <tr *ngFor="let category of categories">
-            <td>{{category.description}}</td>
-          </tr>
+    

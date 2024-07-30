@@ -16,10 +16,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './add-product.component.css'
 })
 
-export class AddProductComponent {
+export class AddProductComponent implements OnInit {
 
   model: AddProductRequest;
-  constructor(private productService:ProductService){
+  constructor(private productService:ProductService,private categoryService: CategoryService){
     this.model = {
 
       Description:'',
@@ -30,20 +30,9 @@ export class AddProductComponent {
 
     };
   }
-  onFormSubmit(){
-    this.productService.addProduct(this.model)
-    .subscribe({
-      next:(response)=>{
-        
-      }
-    });
-  }
-
-}
-export class CategoryListComponent implements OnInit {
   categories?: Category[]
 
-  constructor(private categoryService: CategoryService) { }
+
 
   ngOnInit(): void {
     this.categoryService.getAllCategories()
@@ -54,4 +43,13 @@ export class CategoryListComponent implements OnInit {
         }
       });
   }
+  onFormSubmit(){
+    this.productService.addProduct(this.model)
+    .subscribe({
+      next:(response)=>{
+        
+      }
+    });
+  }
+
 }
