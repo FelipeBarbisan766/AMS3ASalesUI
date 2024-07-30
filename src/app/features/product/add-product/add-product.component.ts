@@ -32,8 +32,6 @@ export class AddProductComponent implements OnInit {
   }
   categories?: Category[]
 
-
-
   ngOnInit(): void {
     this.categoryService.getAllCategories()
 

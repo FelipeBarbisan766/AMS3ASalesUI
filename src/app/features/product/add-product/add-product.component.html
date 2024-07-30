@@ -13,8 +13,8 @@
                 <input type="text" class="form-control" name="imageURL" id="description" [(ngModel)]="model.ImageURL">
                 <label class="form-label">category</label>
                 <ng-container *ngIf="categories">
-                    <select class="form-select" name="category" id="description" *ngFor="let category of categories" >
-                        <option value="{{category.id}}" [(ngModel)]="model.CategoryId">{{category.description}}</option>
+                <select class="form-select" name="category" id="description"  >
+                        <option *ngFor="let category of categories" [(ngModel)]="model.CategoryId">{{category.id}}</option>
                     </select>
                 </ng-container>
             </div>
